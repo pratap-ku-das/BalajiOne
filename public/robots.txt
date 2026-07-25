@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://balajione.dev/sitemap.xml
