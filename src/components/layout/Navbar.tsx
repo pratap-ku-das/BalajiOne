@@ -36,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`fixed top-0 left-0 right-0 z-[900] transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#050816]/80 backdrop-blur-xl border-b border-white/10 shadow-2xl py-3.5'
+          ? 'bg-[#070D22]/85 backdrop-blur-xl border-b border-amber-500/20 shadow-2xl py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -51,16 +51,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             }}
             className="flex items-center space-x-3.5 group"
           >
-            <div className="relative w-12 h-12 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(234,179,8,0.35)] group-hover:scale-105 transition-transform duration-300">
-              <img
-                src="/balajione-logo.jpg"
-                alt="BalajiOne Enterprises"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative w-11 h-11 p-0.5 rounded-xl bg-gradient-to-tr from-amber-500 via-yellow-200 to-amber-600 shadow-[0_0_20px_rgba(212,175,55,0.4)] group-hover:scale-105 transition-transform duration-300">
+              <div className="w-full h-full rounded-[9px] overflow-hidden bg-[#070D22]">
+                <img
+                  src="/balajione-logo.jpg"
+                  alt="BalajiOne Enterprises"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <div>
-              <span className="text-2xl font-extrabold font-heading tracking-tight text-white group-hover:text-cyan-300 transition-colors">
-                Balaji<span className="gradient-text-vibrant">One</span>
+              <span className="text-2xl font-extrabold font-heading tracking-tight text-white group-hover:text-amber-300 transition-colors">
+                Balaji<span className="gradient-text-gold-luxury">One</span>
               </span>
               <span className="block text-[10px] font-mono text-amber-400 font-bold tracking-widest uppercase">
                 Enterprises
@@ -235,7 +237,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Navigation Drawer in Imperial Gold Theme */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#060B26]/95 backdrop-blur-2xl border-b border-amber-500/30 p-6 space-y-4 text-white animate-in slide-in-from-top-4 duration-200 shadow-2xl">
+        <div className="lg:hidden bg-[#070D22]/95 backdrop-blur-2xl border-b border-amber-500/30 p-6 space-y-4 text-white animate-in slide-in-from-top-4 duration-200 shadow-2xl">
           <div className="space-y-1.5">
             {[
               { label: 'Hero Overview', id: 'hero' },

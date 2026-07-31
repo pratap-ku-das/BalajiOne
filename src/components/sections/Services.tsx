@@ -20,22 +20,22 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   };
 
   const serviceImages: Record<string, string> = {
-    'website-development': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop',
-    'mobile-app-development': 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop',
-    'custom-software': 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop',
-    'erp-systems': 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop',
-    'crm-systems': 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop',
-    'school-erp': 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop',
-    'invoice-software': 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=600&auto=format&fit=crop',
-    'solar-crm': 'https://images.unsplash.com/photo-1509391365360-2e959784a276?q=80&w=600&auto=format&fit=crop',
-    'ai-solutions': 'https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=600&auto=format&fit=crop',
-    'ai-chatbots': 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=600&auto=format&fit=crop',
-    'cloud-infrastructure': 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop',
-    'devops-ci-cd': 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=600&auto=format&fit=crop',
-    'ui-ux-design': 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=600&auto=format&fit=crop',
-    'api-development': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=600&auto=format&fit=crop',
-    'workflow-automation': 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop',
-    'cyber-security': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600&auto=format&fit=crop'
+    'website-development': '/images/website-development.jpg',
+    'mobile-app-development': '/images/mobile-app-development.jpg',
+    'custom-software': '/images/custom-software.jpg',
+    'erp-systems': '/images/erp-systems.jpg',
+    'crm-systems': '/images/crm-systems.jpg',
+    'school-erp': '/images/school-erp.jpg',
+    'invoice-software': '/images/invoice-software.jpg',
+    'solar-crm': '/images/solar-crm.jpg',
+    'ai-solutions': '/images/ai-solutions.jpg',
+    'ai-chatbots': '/images/ai-chatbots.jpg',
+    'cloud-infrastructure': '/images/cloud-infrastructure.jpg',
+    'devops-ci-cd': '/images/devops-ci-cd.jpg',
+    'ui-ux-design': '/images/ui-ux-design.jpg',
+    'api-development': '/images/api-development.jpg',
+    'workflow-automation': '/images/workflow-automation.jpg',
+    'cyber-security': '/images/cyber-security.jpg'
   };
 
   const categories = [
@@ -51,7 +51,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
     : SERVICES_DATA.filter((s) => s.category === activeCategory);
 
   return (
-    <section id="services" className="py-24 relative bg-[#060B26] overflow-hidden">
+    <section id="services" className="py-24 relative bg-[#070D22] overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-gradient-to-br from-amber-500/10 via-blue-600/10 to-amber-600/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -90,7 +90,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredServices.map((service) => {
             const IconComponent = iconMap[service.icon] || Code;
-            const imgUrl = serviceImages[service.id] || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop';
+            const imgUrl = serviceImages[service.id] || '/images/website-development.jpg';
 
             return (
               <div
@@ -106,7 +106,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                       alt={service.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#060B26] via-[#060B26]/30 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#070D22] via-[#070D22]/30 to-transparent pointer-events-none" />
                     
                     {/* Floating Orbiting Icon Overlay */}
                     <div className="absolute top-3 left-3 animate-float p-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-amber-500/30 text-amber-400 shadow-xl">
@@ -153,7 +153,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
       {/* Service Detail Modal */}
       {selectedService && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-2xl bg-[#060B26] border border-amber-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl text-white max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-200">
+          <div className="relative w-full max-w-2xl bg-[#070D22] border border-amber-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl text-white max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-200">
             <button
               onClick={() => setSelectedService(null)}
               className="absolute top-6 right-6 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"

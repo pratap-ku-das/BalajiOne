@@ -8,7 +8,7 @@ export const FeaturedProducts: React.FC<{ onBookDemo: (productName: string) => v
   const activeProduct = PRODUCTS_DATA.find((p) => p.id === activeTab) || PRODUCTS_DATA[0];
 
   return (
-    <section id="products" className="py-24 relative bg-[#060B26] overflow-hidden">
+    <section id="products" className="py-24 relative bg-[#070D22] overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-amber-500/10 rounded-full blur-[150px] pointer-events-none" />
 
@@ -125,7 +125,7 @@ export const FeaturedProducts: React.FC<{ onBookDemo: (productName: string) => v
               <span className="text-[10px] font-mono text-amber-300 font-bold">ISO & GST Verified</span>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-amber-500/30 bg-[#060B26] p-5 shadow-2xl space-y-4">
+            <div className="rounded-2xl overflow-hidden border border-amber-500/30 bg-[#070D22] p-5 shadow-2xl space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-white/10 text-xs font-mono text-slate-400">
                 <div className="flex items-center space-x-2">
                   <Monitor className="w-4 h-4 text-amber-400" />

@@ -9,7 +9,7 @@ export const TrustedBy: React.FC = () => {
       icon: Sun,
       color: 'from-amber-500 to-yellow-400',
       textColor: 'text-amber-400',
-      logoImg: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?w=100&auto=format&fit=crop',
+      logoImg: '/images/client-logo-1.jpg',
     },
     {
       name: 'Apex Financial',
@@ -17,7 +17,7 @@ export const TrustedBy: React.FC = () => {
       icon: Landmark,
       color: 'from-blue-600 to-cyan-500',
       textColor: 'text-cyan-400',
-      logoImg: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=100&auto=format&fit=crop',
+      logoImg: '/images/client-logo-2.jpg',
     },
     {
       name: 'Global Academy',
@@ -25,7 +25,7 @@ export const TrustedBy: React.FC = () => {
       icon: GraduationCap,
       color: 'from-purple-600 to-indigo-500',
       textColor: 'text-purple-400',
-      logoImg: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=100&auto=format&fit=crop',
+      logoImg: '/images/client-logo-3.jpg',
     },
     {
       name: 'MediCare Network',
@@ -33,7 +33,7 @@ export const TrustedBy: React.FC = () => {
       icon: HeartPulse,
       color: 'from-emerald-500 to-teal-400',
       textColor: 'text-emerald-400',
-      logoImg: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=100&auto=format&fit=crop',
+      logoImg: '/images/client-logo-4.jpg',
     },
     {
       name: 'Vanguard Logistics',
@@ -41,7 +41,7 @@ export const TrustedBy: React.FC = () => {
       icon: Truck,
       color: 'from-orange-500 to-amber-500',
       textColor: 'text-orange-400',
-      logoImg: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=100&auto=format&fit=crop',
+      logoImg: '/images/client-logo-5.jpg',
     },
     {
       name: 'Nova Dynamics',
@@ -49,7 +49,7 @@ export const TrustedBy: React.FC = () => {
       icon: Bot,
       color: 'from-cyan-500 to-blue-600',
       textColor: 'text-cyan-300',
-      logoImg: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&auto=format&fit=crop',
+      logoImg: '/images/client-logo-6.jpg',
     },
     {
       name: 'Starlight Retail',
@@ -57,7 +57,7 @@ export const TrustedBy: React.FC = () => {
       icon: ShoppingBag,
       color: 'from-pink-500 to-rose-500',
       textColor: 'text-pink-400',
-      logoImg: 'https://images.unsplash.com/photo-1556742049-0a670e4a4591?w=100&auto=format&fit=crop',
+      logoImg: '/images/client-logo-7.jpg',
     },
     {
       name: 'Optima Industrial',
@@ -65,7 +65,7 @@ export const TrustedBy: React.FC = () => {
       icon: Factory,
       color: 'from-blue-500 to-slate-400',
       textColor: 'text-blue-400',
-      logoImg: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&auto=format&fit=crop',
+      logoImg: '/images/client-logo-8.jpg',
     },
   ];
 

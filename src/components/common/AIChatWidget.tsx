@@ -48,13 +48,13 @@ export const AIChatWidget: React.FC<{ onBookMeeting: () => void }> = ({ onBookMe
       const lower = textToSend.toLowerCase();
 
       if (lower.includes('price') || lower.includes('cost') || lower.includes('pricing')) {
-        aiReply = "Our monthly plans start at **₹20,000/mo** ($249/mo) for Starter Growth, **₹50,000/mo** ($599/mo) for Professional Scale (includes custom apps & GST ERP/CRM), and **₹70,000/mo** ($849/mo) for Enterprise Global with dedicated AI pipelines. Custom fixed-scope project estimates start at ₹15,000!";
+        aiReply = "Our fixed per-project plans start at ₹16,000 / project ($199) for Starter Growth, ₹40,000 / project ($479) for Professional Scale (includes custom apps & GST ERP/CRM), and ₹56,000 / project ($679) for Enterprise Global with dedicated AI pipelines. Custom tailored project quotes are also available!";
       } else if (lower.includes('ai') || lower.includes('gpt') || lower.includes('chatbot')) {
         aiReply = "BalajiOne builds fine-tuned GenAI LLM models, custom RAG vector databases, optical document OCR (PAN/Aadhaar extraction), and omnichannel multi-lingual AI chatbots (Hindi, English, Regional) integrated with WhatsApp Business API!";
       } else if (lower.includes('erp') || lower.includes('school') || lower.includes('invoice') || lower.includes('solar')) {
-        aiReply = "We offer flagship SaaS products: **BalajiOne Invoice & GST Cloud** (with Razorpay/UPI), **CampusOne School ERP** (CBSE/ICSE boards), and **SolarPulse CRM** (PM Surya Ghar subsidy tracking). All include native Android & iOS mobile apps!";
+        aiReply = "We offer flagship SaaS products: BalajiOne Invoice & GST Cloud (with Razorpay/UPI), CampusOne School ERP (CBSE/ICSE boards), and SolarPulse CRM (PM Surya Ghar subsidy tracking). All include native Android & iOS mobile apps!";
       } else if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('location') || lower.includes('address')) {
-        aiReply = `You can email us at **${COMPANY_INFO.contactEmail}** or call/WhatsApp **${COMPANY_INFO.phone}**. Our corporate HQ is located at **${COMPANY_INFO.address}**!`;
+        aiReply = `You can email us at ${COMPANY_INFO.contactEmail} or call/WhatsApp ${COMPANY_INFO.phone}. Our corporate HQ is located at ${COMPANY_INFO.address}!`;
       }
 
       setMessages((prev) => [
@@ -89,19 +89,19 @@ export const AIChatWidget: React.FC<{ onBookMeeting: () => void }> = ({ onBookMe
         >
           <div className="relative flex items-center justify-center">
             <Bot className="w-6 h-6 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform text-slate-950" />
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full ring-2 ring-[#060B26] animate-pulse" />
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full ring-2 ring-[#070D22] animate-pulse" />
           </div>
         </button>
       )}
 
       {/* Chat Window Drawer in Deep Navy & Imperial Gold Theme */}
       {isOpen && (
-        <div className="w-[calc(100vw-32px)] max-w-[380px] sm:max-w-[400px] h-[480px] sm:h-[520px] bg-[#060B26] border border-amber-500/30 rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between text-white animate-in slide-in-from-bottom-5 duration-200">
+        <div className="w-[calc(100vw-32px)] max-w-[380px] sm:max-w-[400px] h-[480px] sm:h-[520px] bg-[#070D22] border border-amber-500/30 rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between text-white animate-in slide-in-from-bottom-5 duration-200">
           {/* Header */}
           <div className="px-5 py-4 bg-white/[0.04] border-b border-amber-500/20 flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 p-[2px]">
-                <div className="w-full h-full bg-[#060B26] rounded-full flex items-center justify-center text-amber-400">
+                <div className="w-full h-full bg-[#070D22] rounded-full flex items-center justify-center text-amber-400">
                   <Bot className="w-5 h-5" />
                 </div>
               </div>

@@ -11,7 +11,7 @@ export const Statistics: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-r from-amber-950/20 via-[#060B26] to-amber-950/20 border-y border-amber-500/20 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-r from-amber-950/20 via-[#070D22] to-amber-950/20 border-y border-amber-500/20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
           {stats.map((st, idx) => {

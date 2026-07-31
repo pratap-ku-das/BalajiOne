@@ -8,30 +8,30 @@ export const About: React.FC = () => {
       icon: Target,
       title: 'Innovation First',
       description: 'We continuously push the boundaries of AI, cloud architecture, and modern web software to deliver unfair competitive advantages.',
-      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop',
+      image: '/images/about-global.jpg',
     },
     {
       icon: Shield,
       title: 'Uncompromising Quality',
       description: 'Every line of code is benchmarked for performance, SOC2 security compliance, sub-second latency, and pixel-perfect aesthetics.',
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600&auto=format&fit=crop',
+      image: '/images/cyber-security.jpg',
     },
     {
       icon: Users,
       title: 'Customer Obsession',
       description: 'We treat your revenue, user engagement, and operational scale as our own core metrics, acting as true long-term partners.',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop',
+      image: '/images/about-team.jpg',
     },
     {
       icon: Compass,
       title: 'Long-term Partnership',
       description: 'From early-stage MVP to 24/7 enterprise maintenance, we build scalable software systems designed to thrive for decades.',
-      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop',
+      image: '/images/erp-systems.jpg',
     },
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-[#060B26]">
+    <section id="about" className="py-24 relative overflow-hidden bg-[#070D22]">
       {/* Background glow spot */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px] pointer-events-none" />
 
@@ -55,11 +55,11 @@ export const About: React.FC = () => {
           <div className="glass-card-gold rounded-3xl overflow-hidden border border-amber-500/30 hover:border-amber-400/60 transition-all duration-300 group flex flex-col justify-between">
             <div className="relative h-48 sm:h-56 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop"
+                src="/images/about-office.jpg"
                 alt="BalajiOne Mission - Enterprise Tech Hub"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-85 group-hover:opacity-100"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#060B26] via-[#060B26]/40 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#070D22] via-[#070D22]/40 to-transparent pointer-events-none" />
               
               {/* Floating Animated Badge */}
               <div className="absolute top-4 left-4 animate-float p-2.5 rounded-2xl bg-black/70 backdrop-blur-md border border-amber-400/40 text-amber-400 shadow-xl flex items-center space-x-2">
@@ -82,11 +82,11 @@ export const About: React.FC = () => {
           <div className="glass-card-gold rounded-3xl overflow-hidden border border-amber-500/30 hover:border-amber-400/60 transition-all duration-300 group flex flex-col justify-between">
             <div className="relative h-48 sm:h-56 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop"
+                src="/images/cloud-infrastructure.jpg"
                 alt="BalajiOne Vision - Global AI Cloud Systems"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-85 group-hover:opacity-100"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#060B26] via-[#060B26]/40 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#070D22] via-[#070D22]/40 to-transparent pointer-events-none" />
               
               {/* Floating Animated Badge */}
               <div className="absolute top-4 left-4 animate-float-reverse p-2.5 rounded-2xl bg-black/70 backdrop-blur-md border border-amber-400/40 text-amber-400 shadow-xl flex items-center space-x-2">
@@ -123,7 +123,7 @@ export const About: React.FC = () => {
                       alt={val.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#060B26] via-[#060B26]/30 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#070D22] via-[#070D22]/30 to-transparent pointer-events-none" />
                     <div className="absolute top-3 left-3 p-2 rounded-xl bg-black/70 backdrop-blur border border-amber-500/30 text-amber-400">
                       <IconComp className="w-4 h-4" />
                     </div>

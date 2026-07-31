@@ -5,7 +5,7 @@ export const NotFoundView: React.FC<{ isOpen: boolean; onClose: () => void }> = 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-[#060B26] text-white">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-[#070D22] text-white">
       <div className="max-w-md w-full text-center space-y-6">
         <div className="w-20 h-20 rounded-3xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 mx-auto shadow-2xl animate-pulse">
           <AlertCircle className="w-10 h-10 text-amber-400" />

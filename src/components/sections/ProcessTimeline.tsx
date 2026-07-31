@@ -6,7 +6,7 @@ export const ProcessTimeline: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section id="process" className="py-16 sm:py-24 bg-[#060B26] relative overflow-hidden">
+    <section id="process" className="py-16 sm:py-24 bg-[#070D22] relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 right-10 w-96 h-96 bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -63,7 +63,7 @@ export const ProcessTimeline: React.FC = () => {
         <div className="glass-card-gold rounded-3xl p-5 sm:p-10 border border-amber-500/30 shadow-2xl relative overflow-hidden grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
           <div className="md:col-span-4 space-y-3 sm:space-y-4">
             <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 p-[2px] shadow-lg">
-              <div className="w-full h-full bg-[#060B26] rounded-[14px] flex items-center justify-center font-extrabold font-mono text-lg sm:text-xl text-amber-400">
+              <div className="w-full h-full bg-[#070D22] rounded-[14px] flex items-center justify-center font-extrabold font-mono text-lg sm:text-xl text-amber-400">
                 {PROCESS_STEPS[activeStep].step}
               </div>
             </div>

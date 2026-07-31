@@ -29,10 +29,10 @@ export const LoadingScreen: React.FC<{ onComplete?: () => void }> = ({ onComplet
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.6, ease: 'easeInOut' } }}
-          className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#060B26] text-white selection:bg-amber-500"
+          className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#070D22] text-white selection:bg-amber-500"
         >
           {/* Background Glow */}
-          <div className="absolute w-[500px] h-[500px] bg-gradient-to-tr from-amber-500/20 via-blue-600/10 to-amber-600/20 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute w-[500px] h-[500px] bg-gradient-to-tr from-amber-500/20 via-amber-600/10 to-blue-900/30 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="relative z-10 flex flex-col items-center max-w-sm w-full px-6 text-center">
             {/* Logo Mark */}
@@ -40,13 +40,15 @@ export const LoadingScreen: React.FC<{ onComplete?: () => void }> = ({ onComplet
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="w-20 h-20 mb-6 rounded-2xl overflow-hidden border-2 border-amber-400/60 shadow-[0_0_40px_rgba(245,158,11,0.5)]"
+              className="w-24 h-24 mb-6 p-1 rounded-2xl bg-gradient-to-tr from-amber-500 via-yellow-200 to-amber-600 shadow-[0_0_50px_rgba(212,175,55,0.5)]"
             >
-              <img
-                src="/balajione-logo.jpg"
-                alt="BalajiOne Logo"
-                className="w-full h-full object-cover"
-              />
+              <div className="w-full h-full rounded-[14px] overflow-hidden bg-[#070D22]">
+                <img
+                  src="/balajione-logo.jpg"
+                  alt="BalajiOne Logo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </motion.div>
 
             {/* Brand Title */}

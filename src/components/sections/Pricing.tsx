@@ -8,11 +8,10 @@ interface PricingProps {
 }
 
 export const Pricing: React.FC<PricingProps> = ({ onSelectPlan, onOpenEstimator }) => {
-  const [isAnnual, setIsAnnual] = useState(true);
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
   return (
-    <section id="pricing" className="py-24 bg-[#060B26] relative overflow-hidden">
+    <section id="pricing" className="py-24 bg-[#070D22] relative overflow-hidden">
       {/* Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-amber-500/10 rounded-full blur-[150px] pointer-events-none" />
 
@@ -32,7 +31,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan, onOpenEstimator 
 
         {/* Currency & Billing Interval Controls */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-          {/* Currency Toggle */}
+          {/* Currency Toggle & Project Scope Badge */}
           <div className="flex items-center space-x-1 p-1 rounded-xl glass-panel border border-amber-500/30">
             <button
               onClick={() => setCurrency('INR')}
@@ -52,39 +51,16 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan, onOpenEstimator 
             </button>
           </div>
 
-          {/* Monthly vs Annual Toggle */}
-          <div className="flex items-center space-x-3">
-            <span className={`text-xs font-mono font-semibold ${!isAnnual ? 'text-white' : 'text-slate-400'}`}>
-              Monthly
-            </span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className="w-12 h-7 rounded-full bg-white/10 p-1 border border-amber-500/30 relative transition-colors focus:outline-none cursor-pointer"
-            >
-              <div
-                className={`w-5 h-5 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 shadow-md transform transition-transform ${
-                  isAnnual ? 'translate-x-5' : 'translate-x-0'
-                }`}
-              />
-            </button>
-            <div className="flex items-center space-x-1.5">
-              <span className={`text-xs font-mono font-semibold ${isAnnual ? 'text-white' : 'text-slate-400'}`}>
-                Annual
-              </span>
-              <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-mono border border-emerald-500/30">
-                Save 20%
-              </span>
-            </div>
+          <div className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono">
+            <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
+            <span>Fixed One-Time Project Pricing (No Monthly Subscription Required)</span>
           </div>
         </div>
 
         {/* Pricing Cards 3-Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {PRICING_PLANS.map((plan) => {
-            const rawPrice = currency === 'INR'
-              ? (isAnnual ? plan.annualPriceInr : plan.monthlyPriceInr)
-              : (isAnnual ? plan.annualPriceUsd : plan.monthlyPriceUsd);
-
+            const rawPrice = currency === 'INR' ? plan.annualPriceInr : plan.annualPriceUsd;
             const symbol = currency === 'INR' ? '₹' : '$';
 
             return (
@@ -92,7 +68,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan, onOpenEstimator 
                 key={plan.id}
                 className={`glass-card-interactive rounded-3xl p-8 border transition-all duration-300 flex flex-col justify-between relative ${
                   plan.popular
-                    ? 'border-amber-400/80 shadow-[0_0_35px_rgba(245,158,11,0.25)] scale-105 bg-gradient-to-b from-amber-500/10 via-[#060B26] to-[#060B26]'
+                    ? 'border-amber-400/80 shadow-[0_0_35px_rgba(245,158,11,0.25)] scale-105 bg-gradient-to-b from-amber-500/10 via-[#070D22] to-[#070D22]'
                     : 'border-white/10 hover:border-amber-500/40'
                 }`}
               >
@@ -113,9 +89,9 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan, onOpenEstimator 
                     <span className="text-3xl sm:text-4xl font-extrabold font-mono-numbers text-white">
                       {symbol}{rawPrice.toLocaleString('en-IN')}
                     </span>
-                    <span className="text-xs text-slate-400 font-mono"> / month</span>
-                    <span className="block text-[10px] text-slate-500 font-mono mt-1">
-                      {isAnnual ? 'Billed annually (+ GST compliant)' : 'Billed monthly (+ GST compliant)'}
+                    <span className="text-xs text-slate-400 font-mono"> / project</span>
+                    <span className="block text-[10px] text-amber-400 font-mono mt-1">
+                      Fixed Project Fee (+ GST compliant)
                     </span>
                   </div>
 

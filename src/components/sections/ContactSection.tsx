@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, MessageSquare, Calendar, CheckCircle2, User, Building, ExternalLink } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { COMPANY_INFO } from '../../data/mockData';
+import { submitWeb3Form } from '../../utils/formHandler';
 
 interface ContactSectionProps {
   onOpenSchedule: () => void;
@@ -13,7 +14,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenSchedule, 
   const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [budget, setBudget] = useState('₹50,000 / Month (Professional Scale)');
+  const [budget, setBudget] = useState('₹40,000 / Project (Professional Scale)');
   const [projectType, setProjectType] = useState('Custom Web/Mobile Application');
   const [message, setMessage] = useState(prefilledScope ? `Inquiry regarding: ${prefilledScope}` : '');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -23,33 +24,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenSchedule, 
     e.preventDefault();
     setIsSending(true);
 
-    const payload = {
+    // Dispatch email payload via Web3Forms API (no activation tokens required)
+    await submitWeb3Form({
       name,
-      company: company || 'N/A',
       email,
       phone,
-      budget,
+      company,
       projectType,
-      message,
-      _subject: `BalajiOne Project Inquiry - ${projectType} (${name})`,
-      _cc: `support@balajione.dev,${email}`,
-      _replyto: email,
-      _template: 'table'
-    };
-
-    // Dispatch real HTTP POST email payload to FormSubmit API
-    try {
-      await fetch('https://formsubmit.co/ajax/contact@balajione.dev', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-    } catch (err) {
-      console.log('FormSubmit API notice:', err);
-    }
+      budget,
+      subject: `BalajiOne Project Inquiry - ${projectType} (${name})`,
+      message
+    });
 
     setIsSending(false);
     setIsSubmitted(true);
@@ -79,7 +64,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenSchedule, 
   );
 
   return (
-    <section id="contact" className="py-24 bg-[#060B26] relative overflow-hidden">
+    <section id="contact" className="py-24 bg-[#070D22] relative overflow-hidden">
       {/* Glow */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[160px] pointer-events-none" />
 
@@ -283,16 +268,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenSchedule, 
                       <select
                         value={budget}
                         onChange={(e) => setBudget(e.target.value)}
-                        className="w-full bg-[#060B26] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 font-sans"
+                        className="w-full bg-[#070D22] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 font-sans"
                       >
-                        <option value="₹20,000 / Month (Starter Growth Plan)" className="bg-slate-900">
-                          ₹20,000 / Mo ($249) • Starter Growth
+                        <option value="₹16,000 / Project (Starter Growth)" className="bg-slate-900">
+                          ₹16,000 / Project ($199) • Starter Growth
                         </option>
-                        <option value="₹50,000 / Month (Professional Scale Plan)" className="bg-slate-900">
-                          ₹50,000 / Mo ($599) • Professional Scale (Popular)
+                        <option value="₹40,000 / Project (Professional Scale)" className="bg-slate-900">
+                          ₹40,000 / Project ($479) • Professional Scale (Popular)
                         </option>
-                        <option value="₹70,000 / Month (Enterprise Global Plan)" className="bg-slate-900">
-                          ₹70,000 / Mo ($849) • Enterprise Global
+                        <option value="₹56,000 / Project (Enterprise Global)" className="bg-slate-900">
+                          ₹56,000 / Project ($679) • Enterprise Global
                         </option>
                         <option value="Custom Project Scope (Tailored Quote)" className="bg-slate-900">
                           Custom Project Scope (Tailored Quote)
@@ -307,7 +292,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenSchedule, 
                       <select
                         value={projectType}
                         onChange={(e) => setProjectType(e.target.value)}
-                        className="w-full bg-[#060B26] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 font-sans"
+                        className="w-full bg-[#070D22] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 font-sans"
                       >
                         <option value="Custom Web Application" className="bg-slate-900">Custom Web Application</option>
                         <option value="Mobile App (iOS & Android)" className="bg-slate-900">Mobile App (iOS & Android)</option>

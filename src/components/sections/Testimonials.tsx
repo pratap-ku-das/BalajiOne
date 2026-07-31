@@ -4,7 +4,7 @@ import { TESTIMONIALS } from '../../data/mockData';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section className="py-24 bg-[#060B26] relative overflow-hidden">
+    <section className="py-24 bg-[#070D22] relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />
 

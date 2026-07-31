@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, Calendar, Clock, User, Mail, Building, CheckCircle2, Globe, ExternalLink, MessageSquare } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { COMPANY_INFO } from '../../data/mockData';
+import { submitWeb3Form } from '../../utils/formHandler';
 
 interface ScheduleDrawerProps {
   isOpen: boolean;
@@ -15,13 +16,38 @@ export const ScheduleDrawer: React.FC<ScheduleDrawerProps> = ({
   initialTopic,
 }) => {
   const [topic, setTopic] = useState(initialTopic || 'General Software Engineering & Strategy');
-  const [selectedDate, setSelectedDate] = useState('Tomorrow');
   const [selectedTime, setSelectedTime] = useState('11:00 AM IST');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
+
+  const dynamicDates = React.useMemo(() => {
+    const list = [];
+    const now = new Date();
+    for (let i = 0; i < 5; i++) {
+      const d = new Date();
+      d.setDate(now.getDate() + i);
+      let dayLabel = '';
+      if (i === 0) dayLabel = 'Today';
+      else if (i === 1) dayLabel = 'Tomorrow';
+      else {
+        dayLabel = d.toLocaleDateString('en-US', { weekday: 'short' });
+      }
+      const monthShort = d.toLocaleDateString('en-US', { month: 'short' });
+      const dayNum = d.getDate();
+      const dateStr = `${monthShort} ${dayNum}`;
+      list.push({
+        day: dayLabel,
+        date: dateStr,
+        full: `${dayLabel}, ${dateStr}`
+      });
+    }
+    return list;
+  }, []);
+
+  const [selectedDate, setSelectedDate] = useState(() => dynamicDates[0]?.full || 'Today');
 
   if (!isOpen) return null;
 
@@ -31,14 +57,6 @@ export const ScheduleDrawer: React.FC<ScheduleDrawerProps> = ({
     'Enterprise ERP & GST Solutions',
     'Cloud Migration & DevOps Pipeline',
     'Custom Mobile App Development',
-  ];
-
-  const dates = [
-    { day: 'Today', date: 'Jul 26', full: 'Today, Jul 26' },
-    { day: 'Tomorrow', date: 'Jul 27', full: 'Tomorrow, Jul 27' },
-    { day: 'Mon', date: 'Jul 28', full: 'Mon, Jul 28' },
-    { day: 'Tue', date: 'Jul 29', full: 'Tue, Jul 29' },
-    { day: 'Wed', date: 'Jul 30', full: 'Wed, Jul 30' },
   ];
 
   const timeSlots = [
@@ -54,31 +72,15 @@ export const ScheduleDrawer: React.FC<ScheduleDrawerProps> = ({
     e.preventDefault();
     setIsSending(true);
 
-    const payload = {
+    await submitWeb3Form({
+      name,
+      email,
+      company,
       topic,
       selectedDate,
       selectedTime,
-      name,
-      email,
-      company: company || 'N/A',
-      _subject: `BalajiOne Consultation Booking: ${topic} (${name})`,
-      _cc: `support@balajione.dev,${email}`,
-      _replyto: email,
-      _template: 'table'
-    };
-
-    try {
-      await fetch('https://formsubmit.co/ajax/contact@balajione.dev', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-    } catch (err) {
-      console.log('Schedule API notice:', err);
-    }
+      subject: `BalajiOne Consultation Booking: ${topic} (${name})`
+    });
 
     setIsSending(false);
     setSubmitted(true);
@@ -103,7 +105,7 @@ export const ScheduleDrawer: React.FC<ScheduleDrawerProps> = ({
 
   return (
     <div className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex justify-end transition-opacity">
-      <div className="w-full max-w-lg bg-[#060B26] border-l border-amber-500/30 h-full p-6 sm:p-8 flex flex-col justify-between overflow-y-auto text-white shadow-2xl animate-in slide-in-from-right duration-300">
+      <div className="w-full max-w-lg bg-[#070D22] border-l border-amber-500/30 h-full p-6 sm:p-8 flex flex-col justify-between overflow-y-auto text-white shadow-2xl animate-in slide-in-from-right duration-300">
         <div>
           {/* Drawer Header */}
           <div className="flex items-center justify-between pb-6 border-b border-amber-500/20">
@@ -134,7 +136,7 @@ export const ScheduleDrawer: React.FC<ScheduleDrawerProps> = ({
                   className="w-full bg-white/5 border border-amber-500/20 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400 font-sans"
                 >
                   {topics.map((t) => (
-                    <option key={t} value={t} className="bg-[#060B26] text-white">
+                    <option key={t} value={t} className="bg-[#070D22] text-white">
                       {t}
                     </option>
                   ))}
@@ -147,7 +149,7 @@ export const ScheduleDrawer: React.FC<ScheduleDrawerProps> = ({
                   2. Select Date
                 </label>
                 <div className="grid grid-cols-5 gap-2">
-                  {dates.map((d) => (
+                  {dynamicDates.map((d) => (
                     <button
                       key={d.full}
                       type="button"

@@ -42,7 +42,7 @@ export const CmdKSearchModal: React.FC<CmdKSearchModalProps> = ({ isOpen, onClos
   return (
     <div className="fixed inset-0 z-[999] flex items-start justify-center pt-20 px-4 bg-black/70 backdrop-blur-md transition-all">
       <div
-        className="relative w-full max-w-2xl bg-[#060B26] border border-amber-500/30 rounded-2xl shadow-2xl overflow-hidden text-white animate-in fade-in zoom-in-95 duration-200"
+        className="relative w-full max-w-2xl bg-[#070D22] border border-amber-500/30 rounded-2xl shadow-2xl overflow-hidden text-white animate-in fade-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Header Input */}

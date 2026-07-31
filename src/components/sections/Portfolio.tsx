@@ -19,7 +19,7 @@ export const Portfolio: React.FC = () => {
     : CASE_STUDIES.filter((c) => c.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-24 bg-[#060B26] relative overflow-hidden">
+    <section id="portfolio" className="py-24 bg-[#070D22] relative overflow-hidden">
       {/* Glow */}
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -63,7 +63,7 @@ export const Portfolio: React.FC = () => {
               className="glass-card-interactive rounded-3xl overflow-hidden border border-white/10 hover:border-amber-400/60 transition-all duration-300 hover:-translate-y-2 group cursor-pointer flex flex-col justify-between"
             >
               {/* Card Image Banner */}
-              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-blue-950 via-[#060B26] to-amber-950 flex items-center justify-center">
+              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-blue-950 via-[#070D22] to-amber-950 flex items-center justify-center">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -72,7 +72,7 @@ export const Portfolio: React.FC = () => {
                   }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060B26] via-[#060B26]/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070D22] via-[#070D22]/30 to-transparent pointer-events-none" />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-amber-500/30 text-[10px] font-mono text-amber-300">
                   {item.industry}
                 </div>
@@ -112,7 +112,7 @@ export const Portfolio: React.FC = () => {
       {/* Case Study Deep Dive Modal */}
       {selectedCaseStudy && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-3xl bg-[#060B26] border border-amber-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl text-white max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-200">
+          <div className="relative w-full max-w-3xl bg-[#070D22] border border-amber-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl text-white max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-200">
             <button
               onClick={() => setSelectedCaseStudy(null)}
               className="absolute top-6 right-6 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"

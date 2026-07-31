@@ -407,7 +407,7 @@ export const CASE_STUDIES: CaseStudyItem[] = [
       { metric: "₹85 Cr", label: "New Pipeline Generated" }
     ],
     techStack: ["React", "Python", "Google Maps API", "PostgreSQL", "TailwindCSS"],
-    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&auto=format&fit=crop&q=80"
+    image: "/images/product-solar.jpg"
   },
   {
     id: "ai-fintech-automation",
@@ -424,7 +424,7 @@ export const CASE_STUDIES: CaseStudyItem[] = [
       { metric: "65%", label: "Reduction in Operational Cost" }
     ],
     techStack: ["Python", "OpenAI GPT-4", "FastAPI", "React", "Docker"],
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop&q=80"
+    image: "/images/erp-systems.jpg"
   },
   {
     id: "enterprise-school-erp",
@@ -441,7 +441,7 @@ export const CASE_STUDIES: CaseStudyItem[] = [
       { metric: "0", label: "Manual Reconciliation Errors" }
     ],
     techStack: ["React", "NestJS", "Flutter", "PostgreSQL", "Redis"],
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80"
+    image: "/images/school-erp.jpg"
   },
   {
     id: "healthcare-ai-diagnostics",
@@ -458,7 +458,7 @@ export const CASE_STUDIES: CaseStudyItem[] = [
       { metric: "4.9/5", label: "Patient Rating" }
     ],
     techStack: ["Next.js", "WebRTC", "Node.js", "AWS MedTech", "TailwindCSS"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80"
+    image: "/images/cyber-security.jpg"
   }
 ];
 
@@ -501,8 +501,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     id: "starter",
     name: "Starter Growth",
     tagline: "Ideal for Indian startups & growing businesses launching modern digital products.",
-    monthlyPriceInr: 20000,
-    monthlyPriceUsd: 249,
+    monthlyPriceInr: 16000,
+    monthlyPriceUsd: 199,
     annualPriceInr: 16000,
     annualPriceUsd: 199,
     features: [
@@ -512,16 +512,16 @@ export const PRICING_PLANS: PricingPlan[] = [
       "Full SEO & Schema.org Optimization",
       "Standard SSL & Security Setup",
       "2 Weeks Post-Launch Support",
-      "Source Code Ownership"
+      "Full Source Code Ownership"
     ],
-    cta: "Start Growth Plan"
+    cta: "Start Growth Project"
   },
   {
     id: "professional",
     name: "Professional Scale",
     tagline: "Designed for expanding businesses seeking custom software, GST ERP/CRM, or mobile apps.",
-    monthlyPriceInr: 50000,
-    monthlyPriceUsd: 599,
+    monthlyPriceInr: 40000,
+    monthlyPriceUsd: 479,
     annualPriceInr: 40000,
     annualPriceUsd: 479,
     popular: true,
@@ -535,14 +535,14 @@ export const PRICING_PLANS: PricingPlan[] = [
       "3 Months Dedicated Engineering SLA",
       "Priority 24/7 Support Channel"
     ],
-    cta: "Scale Your Business"
+    cta: "Scale Your Project"
   },
   {
     id: "enterprise",
     name: "Enterprise Global",
     tagline: "For enterprises requiring heavy custom AI pipelines, cloud infrastructure, and 99.99% uptime.",
-    monthlyPriceInr: 70000,
-    monthlyPriceUsd: 849,
+    monthlyPriceInr: 56000,
+    monthlyPriceUsd: 679,
     annualPriceInr: 56000,
     annualPriceUsd: 679,
     features: [
@@ -555,7 +555,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       "Guaranteed 15-Minute Emergency SLA",
       "SOC2 & ISO Security Compliance Setup"
     ],
-    cta: "Deploy Enterprise Suite"
+    cta: "Deploy Enterprise Project"
   }
 ];
 
@@ -565,7 +565,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     name: "Marcus Vance",
     role: "Chief Technology Officer",
     company: "Apex Global Financial",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
+    avatar: "/images/avatar-marcus.jpg",
     rating: 5,
     content: "BalajiOne delivered our AI loan scoring platform in half the time expected. Their architecture design is sleek, secure, and has processed over ₹450 Cr without a single hitch."
   },
@@ -574,7 +574,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     name: "Priya Sundaram",
     role: "VP of Digital Transformation",
     company: "SunRay Green Energy India",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
+    avatar: "/images/avatar-emily.jpg",
     rating: 5,
     content: "The SolarPulse CRM custom built by BalajiOne revolutionized our entire installation pipeline. Our proposal turnarounds dropped from 2 days to 3 minutes!"
   },
@@ -583,7 +583,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     name: "Dr. Rajesh Sharma",
     role: "Managing Director",
     company: "Global Knowledge Academy India",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+    avatar: "/images/avatar-sarah.jpg",
     rating: 5,
     content: "CampusOne ERP transformed how our 40+ campuses operate. Parents love the real-time app and our fee collection is 100% automated via UPI now."
   }

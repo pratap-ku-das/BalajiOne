@@ -40,7 +40,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
 
   return (
     <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/75 backdrop-blur-md">
-      <div className="relative w-full max-w-2xl bg-[#060B26] border border-amber-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl text-white animate-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-2xl bg-[#070D22] border border-amber-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl text-white animate-in zoom-in-95 duration-200">
         {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-amber-500/20">
           <div className="flex items-center space-x-3">

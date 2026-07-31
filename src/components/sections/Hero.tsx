@@ -48,8 +48,8 @@ export const Hero: React.FC<HeroProps> = ({
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-6xl md:text-7xl font-extrabold font-heading tracking-tight max-w-5xl leading-[1.1]"
           >
-            Transforming Ideas into <br className="hidden sm:inline" />
-            <span className="gradient-text-gold-luxury">Powerful Digital Solutions</span>
+            BalajiOne Enterprises <br className="hidden sm:inline" />
+            <span className="gradient-text-gold-luxury">AI &amp; Custom Digital Solutions</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -119,20 +119,20 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="absolute w-[360px] h-[360px] sm:w-[480px] sm:h-[480px] rounded-full border border-amber-500/20 animate-ping-slow pointer-events-none" />
           <div className="absolute w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] rounded-full border border-amber-400/30 animate-spin-slow pointer-events-none" />
 
-          {/* Central Seamless Floating 3D Logo Emblem (NO Rectangular Container Box) */}
+          {/* Central Seamless Floating 3D Logo Emblem */}
           <div className="relative z-20 group cursor-pointer">
-            <div className="relative w-44 h-44 sm:w-56 sm:h-56 rounded-full p-2 bg-gradient-to-tr from-amber-500 via-yellow-300 to-amber-600 shadow-[0_0_70px_rgba(245,158,11,0.5)] group-hover:scale-105 transition-transform duration-500">
-              <div className="w-full h-full rounded-full overflow-hidden border-2 border-white/20">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-3xl p-2 bg-gradient-to-tr from-amber-500 via-yellow-200 to-amber-600 shadow-[0_0_80px_rgba(212,175,55,0.5)] group-hover:scale-105 transition-transform duration-500">
+              <div className="w-full h-full rounded-[22px] overflow-hidden border border-amber-400/30 bg-[#070D22]">
                 <img
                   src="/balajione-logo.jpg"
-                  alt="BalajiOne 3D Logo Emblem"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  alt="BalajiOne Enterprises Logo"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>
-            <div className="mt-4 text-center">
-              <span className="px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase shadow-xl inline-block">
-                BalajiOne Enterprises
+            <div className="mt-5 text-center">
+              <span className="px-5 py-1.5 rounded-full bg-[#070D22]/90 backdrop-blur-md border border-amber-400/40 text-amber-300 text-xs font-mono font-bold tracking-widest uppercase shadow-2xl inline-block">
+                Innovate. Integrate. Elevate.
               </span>
             </div>
           </div>

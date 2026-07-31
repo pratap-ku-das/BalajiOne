@@ -38,7 +38,7 @@ export const LegalModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
 
         {activeTab === 'privacy' ? (
           <div className="space-y-4 text-xs text-slate-300 leading-relaxed font-sans">
-            <h3 className="text-xl font-bold font-heading text-white">Privacy Policy (BalajiOne Technologies)</h3>
+            <h3 className="text-xl font-bold font-heading text-white">Privacy Policy (BalajiOne Enterprises)</h3>
             <p><strong>Effective Date:</strong> July 26, 2026</p>
             <p>
               BalajiOne (&quot;balajione.dev&quot;) is committed to protecting the privacy and confidentiality of our clients, partners, and website visitors. This document details our data collection and protection practices.
@@ -57,7 +57,7 @@ export const LegalModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
             <h3 className="text-xl font-bold font-heading text-white">Terms & Conditions of Service</h3>
             <p><strong>Effective Date:</strong> July 26, 2026</p>
             <p>
-              By accessing balajione.dev or engaging BalajiOne Technologies for software development services, you agree to comply with the following contractual terms.
+              By accessing balajione.dev or engaging BalajiOne Enterprises for software development services, you agree to comply with the following contractual terms.
             </p>
             <h4 className="text-sm font-bold text-white font-heading">1. Service Level Agreements (SLAs)</h4>
             <p>
