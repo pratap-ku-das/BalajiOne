@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, Check, ArrowRight, X, Clock } from 'lucide-react';
+import { Calculator, Check, ArrowRight, X, Clock, IndianRupee } from 'lucide-react';
 
 interface CostEstimatorModalProps {
   isOpen: boolean;
@@ -11,11 +11,10 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
   const [projectType, setProjectType] = useState<'web' | 'mobile' | 'erp' | 'ai' | 'fullstack'>('fullstack');
   const [designLevel, setDesignLevel] = useState<'standard' | 'luxury'>('luxury');
   const [aiModule, setAiModule] = useState(true);
-  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
   if (!isOpen) return null;
 
-  // Base calculation logic in INR & USD
+  // Base calculation logic in Indian rupees
   let basePriceInr = 60000;
   let baseWeeks = 6;
 
@@ -31,12 +30,8 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
   const minInr = Math.round(basePriceInr * 0.9);
   const maxInr = Math.round(basePriceInr * 1.15);
 
-  const minUsd = Math.round(minInr / 83);
-  const maxUsd = Math.round(maxInr / 83);
-
-  const isRupees = currency === 'INR';
-  const minText = isRupees ? `₹${minInr.toLocaleString('en-IN')}` : `$${minUsd.toLocaleString()}`;
-  const maxText = isRupees ? `₹${maxInr.toLocaleString('en-IN')}` : `$${maxUsd.toLocaleString()}`;
+  const minText = minInr.toLocaleString('en-IN');
+  const maxText = maxInr.toLocaleString('en-IN');
 
   return (
     <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/75 backdrop-blur-md">
@@ -58,24 +53,6 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
           >
             <X className="w-5 h-5" />
           </button>
-        </div>
-
-        {/* Currency Switcher */}
-        <div className="mt-4 flex justify-end">
-          <div className="flex space-x-1 p-1 rounded-xl glass-panel border border-amber-500/30 text-xs">
-            <button
-              onClick={() => setCurrency('INR')}
-              className={`px-3 py-1 rounded-lg font-mono font-bold cursor-pointer ${isRupees ? 'bg-amber-500 text-slate-950 shadow-md' : 'text-slate-400'}`}
-            >
-              🇮🇳 INR (₹)
-            </button>
-            <button
-              onClick={() => setCurrency('USD')}
-              className={`px-3 py-1 rounded-lg font-mono font-bold cursor-pointer ${!isRupees ? 'bg-blue-600 text-white shadow-md' : 'text-slate-400'}`}
-            >
-              🌐 USD ($)
-            </button>
-          </div>
         </div>
 
         {/* Options Selection */}
@@ -163,7 +140,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
                 Estimated Investment & Timeframe
               </span>
               <div className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
-                <span>{minText} - {maxText}</span>
+                <span className="inline-flex items-center gap-1 flex-wrap"><IndianRupee className="w-6 h-6" strokeWidth={3} />{minText} – <IndianRupee className="w-6 h-6" strokeWidth={3} />{maxText}</span>
               </div>
               <div className="text-xs text-slate-300 flex items-center space-x-1 mt-1 font-mono">
                 <Clock className="w-3.5 h-3.5 text-amber-400" />
@@ -173,7 +150,7 @@ export const CostEstimatorModal: React.FC<CostEstimatorModalProps> = ({ isOpen, 
 
             <button
               onClick={() => {
-                onSelectPlan(`Custom Estimate: ${minText}-${maxText} (${projectType})`);
+                onSelectPlan(`Custom Estimate: INR ${minText}-${maxText} (${projectType})`);
                 onClose();
               }}
               className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 hover:scale-105 text-slate-950 font-extrabold text-xs shadow-lg transition-all flex items-center space-x-2 shrink-0 cursor-pointer"

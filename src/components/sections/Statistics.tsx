@@ -3,10 +3,10 @@ import { Award, Users, Clock, ShieldCheck, TrendingUp } from 'lucide-react';
 
 export const Statistics: React.FC = () => {
   const stats = [
-    { icon: Award, number: '500+', label: 'Projects Completed', subtext: 'Delivered on time across 15+ countries' },
+    { icon: Award, number: '500+', label: 'Projects Completed', subtext: 'Delivered for organisations across India' },
     { icon: Users, number: '99.4%', label: 'Happy Clients', subtext: '98.2% Client Retention Rate' },
     { icon: Clock, number: '10+ Yrs', label: 'Innovation Experience', subtext: 'Architecting modern cloud software' },
-    { icon: ShieldCheck, number: '24×7', label: 'Global SLA Support', subtext: '15-min emergency response guarantee' },
+    { icon: ShieldCheck, number: '24×7', label: 'India-wide SLA Support', subtext: '15-min emergency response guarantee' },
     { icon: TrendingUp, number: '₹500 Cr+', label: 'Client Revenue Lift', subtext: 'Driven by automation & scalable tech' },
   ];
 

@@ -45,7 +45,7 @@ export const LegalModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
             </p>
             <h4 className="text-sm font-bold text-white font-heading">1. Data Encryption & Security</h4>
             <p>
-              All customer data, application source code, and API interactions are transmitted via TLS 1.3 256-bit encryption. We maintain strict SOC2 Type II compliance standards and execute NDAs prior to project commencement.
+              All customer data, application source code, and API interactions are transmitted via TLS 1.3 256-bit encryption. Our security practices are aligned with India's Digital Personal Data Protection Act, 2023 and ISO 27001 controls, and we execute NDAs before project commencement.
             </p>
             <h4 className="text-sm font-bold text-white font-heading">2. IP Ownership</h4>
             <p>

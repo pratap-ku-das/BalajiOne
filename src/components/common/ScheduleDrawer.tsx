@@ -65,7 +65,7 @@ export const ScheduleDrawer: React.FC<ScheduleDrawerProps> = ({
     '02:00 PM IST',
     '03:30 PM IST',
     '05:00 PM IST',
-    '07:00 PM IST (US/EU Friendly)',
+    '07:00 PM IST (Evening Slot)',
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -104,8 +104,8 @@ export const ScheduleDrawer: React.FC<ScheduleDrawerProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex justify-end transition-opacity">
-      <div className="w-full max-w-lg bg-[#070D22] border-l border-amber-500/30 h-full p-6 sm:p-8 flex flex-col justify-between overflow-y-auto text-white shadow-2xl animate-in slide-in-from-right duration-300">
+    <div className="atelier-overlay atelier-schedule fixed inset-0 z-[999] flex justify-end transition-opacity">
+      <div className="atelier-drawer w-full max-w-xl h-full p-6 sm:p-9 flex flex-col justify-between overflow-y-auto animate-in slide-in-from-right duration-300">
         <div>
           {/* Drawer Header */}
           <div className="flex items-center justify-between pb-6 border-b border-amber-500/20">

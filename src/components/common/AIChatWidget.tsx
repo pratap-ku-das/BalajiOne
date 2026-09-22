@@ -48,7 +48,7 @@ export const AIChatWidget: React.FC<{ onBookMeeting: () => void }> = ({ onBookMe
       const lower = textToSend.toLowerCase();
 
       if (lower.includes('price') || lower.includes('cost') || lower.includes('pricing')) {
-        aiReply = "Our fixed per-project plans start at ₹16,000 / project ($199) for Starter Growth, ₹40,000 / project ($479) for Professional Scale (includes custom apps & GST ERP/CRM), and ₹56,000 / project ($679) for Enterprise Global with dedicated AI pipelines. Custom tailored project quotes are also available!";
+        aiReply = "Our fixed per-project plans start at ₹16,000 / project for Starter Growth, ₹40,000 / project for Professional Scale (includes custom apps & GST ERP/CRM), and ₹56,000 / project for Enterprise India with dedicated AI pipelines. Custom tailored project quotes are also available!";
       } else if (lower.includes('ai') || lower.includes('gpt') || lower.includes('chatbot')) {
         aiReply = "BalajiOne builds fine-tuned GenAI LLM models, custom RAG vector databases, optical document OCR (PAN/Aadhaar extraction), and omnichannel multi-lingual AI chatbots (Hindi, English, Regional) integrated with WhatsApp Business API!";
       } else if (lower.includes('erp') || lower.includes('school') || lower.includes('invoice') || lower.includes('solar')) {
@@ -78,7 +78,7 @@ export const AIChatWidget: React.FC<{ onBookMeeting: () => void }> = ({ onBookMe
   ];
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[990]">
+    <div className="atelier-chat fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[990]">
       {/* Floating Trigger Button in Imperial Gold Theme */}
       {!isOpen && (
         <button
@@ -96,7 +96,7 @@ export const AIChatWidget: React.FC<{ onBookMeeting: () => void }> = ({ onBookMe
 
       {/* Chat Window Drawer in Deep Navy & Imperial Gold Theme */}
       {isOpen && (
-        <div className="w-[calc(100vw-32px)] max-w-[380px] sm:max-w-[400px] h-[480px] sm:h-[520px] bg-[#070D22] border border-amber-500/30 rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between text-white animate-in slide-in-from-bottom-5 duration-200">
+        <div className="atelier-chat-window w-[calc(100vw-32px)] max-w-[410px] h-[520px] sm:h-[560px] overflow-hidden flex flex-col justify-between animate-in slide-in-from-bottom-5 duration-200">
           {/* Header */}
           <div className="px-5 py-4 bg-white/[0.04] border-b border-amber-500/20 flex items-center justify-between">
             <div className="flex items-center space-x-3">

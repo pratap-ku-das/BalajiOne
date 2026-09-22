@@ -13,7 +13,7 @@ export const About: React.FC = () => {
     {
       icon: Shield,
       title: 'Uncompromising Quality',
-      description: 'Every line of code is benchmarked for performance, SOC2 security compliance, sub-second latency, and pixel-perfect aesthetics.',
+      description: 'Every line of code is benchmarked for performance, DPDP Act-aligned security, sub-second latency, and pixel-perfect aesthetics.',
       image: '/images/cyber-security.jpg',
     },
     {
@@ -45,7 +45,7 @@ export const About: React.FC = () => {
             Architecting the Future of <span className="gradient-text-gold-luxury">Enterprise & AI Technology</span>
           </h2>
           <p className="mt-4 text-slate-300 text-base sm:text-lg">
-            BalajiOne Enterprises is a premier software development, artificial intelligence, and cloud transformation company. We bridge complex engineering with luxury user interfaces to help businesses scale globally.
+            BalajiOne Enterprises is a premier software development, artificial intelligence, and cloud transformation company. We bridge complex engineering with luxury user interfaces to help Indian businesses scale with confidence.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export const About: React.FC = () => {
             </div>
 
             <div className="p-6 sm:p-8 pt-2">
-              <h3 className="text-2xl font-bold font-heading text-white mb-3">Accelerate Global Business Growth</h3>
+              <h3 className="text-2xl font-bold font-heading text-white mb-3">Accelerate Indian Business Growth</h3>
               <p className="text-slate-300 text-sm leading-relaxed">{COMPANY_INFO.mission}</p>
               <div className="mt-6 pt-4 border-t border-amber-500/20 flex items-center space-x-2 text-xs text-amber-300 font-mono">
                 <CheckCircle2 className="w-4 h-4 text-amber-400" />
@@ -83,7 +83,7 @@ export const About: React.FC = () => {
             <div className="relative h-48 sm:h-56 overflow-hidden">
               <img
                 src="/images/cloud-infrastructure.jpg"
-                alt="BalajiOne Vision - Global AI Cloud Systems"
+                alt="BalajiOne Vision - India-ready AI Cloud Systems"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-85 group-hover:opacity-100"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#070D22] via-[#070D22]/40 to-transparent pointer-events-none" />
@@ -96,7 +96,7 @@ export const About: React.FC = () => {
             </div>
 
             <div className="p-6 sm:p-8 pt-2">
-              <h3 className="text-2xl font-bold font-heading text-white mb-3">Global Technology Leadership</h3>
+              <h3 className="text-2xl font-bold font-heading text-white mb-3">Technology Leadership from India</h3>
               <p className="text-slate-300 text-sm leading-relaxed">{COMPANY_INFO.vision}</p>
               <div className="mt-6 pt-4 border-t border-amber-500/20 flex items-center space-x-2 text-xs text-amber-300 font-mono">
                 <CheckCircle2 className="w-4 h-4 text-amber-400" />

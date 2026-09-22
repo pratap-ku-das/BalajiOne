@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenView })
             </a>
 
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed font-sans">
-              {COMPANY_INFO.tagline}. We empower Indian & global startups, SMEs, and enterprises with custom software engineering, AI automation, and cloud infrastructure.
+              {COMPANY_INFO.tagline}. We empower Indian startups, SMEs, institutions, and enterprises with custom software engineering, AI automation, and cloud infrastructure.
             </p>
 
             <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs font-mono space-y-1.5">

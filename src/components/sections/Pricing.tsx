@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Check, Sparkles, Calculator } from 'lucide-react';
+import React from 'react';
+import { Check, Sparkles, Calculator, IndianRupee } from 'lucide-react';
 import { PRICING_PLANS } from '../../data/mockData';
 
 interface PricingProps {
@@ -8,8 +8,6 @@ interface PricingProps {
 }
 
 export const Pricing: React.FC<PricingProps> = ({ onSelectPlan, onOpenEstimator }) => {
-  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
-
   return (
     <section id="pricing" className="py-24 bg-[#070D22] relative overflow-hidden">
       {/* Glow */}
@@ -25,43 +23,25 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan, onOpenEstimator 
             Simple, Scalable <span className="gradient-text-gold-luxury">Pricing & Plans</span>
           </h2>
           <p className="mt-4 text-slate-300 text-base">
-            Choose a dedicated engineering squad model or custom fixed-scope pricing. GST & International invoicing supported. Full code ownership.
+            Choose a dedicated engineering squad model or custom fixed-scope pricing. GST-compliant Indian invoicing supported. Full code ownership.
           </p>
         </div>
-
-        {/* Currency & Billing Interval Controls */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-          {/* Currency Toggle & Project Scope Badge */}
-          <div className="flex items-center space-x-1 p-1 rounded-xl glass-panel border border-amber-500/30">
-            <button
-              onClick={() => setCurrency('INR')}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
-                currency === 'INR' ? 'bg-amber-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              🇮🇳 INR (₹)
-            </button>
-            <button
-              onClick={() => setCurrency('USD')}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
-                currency === 'USD' ? 'bg-blue-600 text-white shadow-md' : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              🌐 USD ($)
-            </button>
+        {/* India-first pricing badge */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-xl glass-panel border border-amber-500/30 text-xs font-bold">
+            <IndianRupee className="w-4 h-4 text-amber-400" />
+            <span>All prices in Indian Rupees (INR)</span>
           </div>
-
           <div className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono">
             <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
-            <span>Fixed One-Time Project Pricing (No Monthly Subscription Required)</span>
+            <span>Fixed one-time project pricing · GST-compliant invoicing</span>
           </div>
         </div>
 
         {/* Pricing Cards 3-Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {PRICING_PLANS.map((plan) => {
-            const rawPrice = currency === 'INR' ? plan.annualPriceInr : plan.annualPriceUsd;
-            const symbol = currency === 'INR' ? '₹' : '$';
+            const rawPrice = plan.annualPriceInr;
 
             return (
               <div
@@ -86,8 +66,9 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan, onOpenEstimator 
 
                   {/* Price display */}
                   <div className="my-6">
-                    <span className="text-3xl sm:text-4xl font-extrabold font-mono-numbers text-white">
-                      {symbol}{rawPrice.toLocaleString('en-IN')}
+                    <span className="inline-flex items-center text-3xl sm:text-4xl font-extrabold font-mono-numbers text-white">
+                      <IndianRupee className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={3} />
+                      {rawPrice.toLocaleString('en-IN')}
                     </span>
                     <span className="text-xs text-slate-400 font-mono"> / project</span>
                     <span className="block text-[10px] text-amber-400 font-mono mt-1">
@@ -128,7 +109,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan, onOpenEstimator 
               <Calculator className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-lg font-bold font-heading text-white">Need a Custom Fixed-Scope Quote in INR or USD?</h4>
+              <h4 className="text-lg font-bold font-heading text-white">Need a Custom Fixed-Scope Quote in Indian Rupees?</h4>
               <p className="text-xs text-slate-300">
                 Use our dynamic calculator to select your exact tech requirements and calculate instant estimate.
               </p>

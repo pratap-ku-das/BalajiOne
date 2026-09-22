@@ -42,7 +42,7 @@ export const TeamModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
         </span>
         <h3 className="text-3xl font-extrabold font-heading text-white mb-2">BalajiOne Executive Team</h3>
         <p className="text-xs text-slate-300 mb-8 font-sans">
-          Headquartered in Dumduma, Bhubaneswar, Odisha with software engineering and executive leadership driving digital solutions across India & globally.
+          Headquartered in Dumduma, Bhubaneswar, Odisha with software engineering and executive leadership driving digital solutions across India.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

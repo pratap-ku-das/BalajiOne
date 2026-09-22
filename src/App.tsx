@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { CursorGlow } from './components/common/CursorGlow';
 import { ScrollProgress } from './components/common/ScrollProgress';
-import { LoadingScreen } from './components/common/LoadingScreen';
 import { CmdKSearchModal } from './components/common/CmdKSearchModal';
 import { ScheduleDrawer } from './components/common/ScheduleDrawer';
 import { AIChatWidget } from './components/common/AIChatWidget';
@@ -62,9 +61,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050816] text-white selection:bg-blue-600 selection:text-white font-sans overflow-x-hidden relative">
-      {/* Initial Loading Splash Screen */}
-      <LoadingScreen />
+    <div className="site-shell min-h-screen overflow-x-hidden relative">
 
       {/* Top Scroll Reading Progress */}
       <ScrollProgress />

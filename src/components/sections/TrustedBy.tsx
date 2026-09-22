@@ -4,7 +4,7 @@ import { Sun, Landmark, GraduationCap, HeartPulse, Truck, Bot, ShoppingBag, Fact
 export const TrustedBy: React.FC = () => {
   const partners = [
     {
-      name: 'SunRay Energy',
+      name: 'SuryaUrja Energy',
       industry: 'Solar & CleanTech',
       icon: Sun,
       color: 'from-amber-500 to-yellow-400',
@@ -12,7 +12,7 @@ export const TrustedBy: React.FC = () => {
       logoImg: '/images/client-logo-1.jpg',
     },
     {
-      name: 'Apex Financial',
+      name: 'ArthSetu Finance',
       industry: 'FinTech Enterprise',
       icon: Landmark,
       color: 'from-blue-600 to-cyan-500',
@@ -20,7 +20,7 @@ export const TrustedBy: React.FC = () => {
       logoImg: '/images/client-logo-2.jpg',
     },
     {
-      name: 'Global Academy',
+      name: 'Bharat Academy',
       industry: 'EdTech & Campus',
       icon: GraduationCap,
       color: 'from-purple-600 to-indigo-500',
@@ -28,7 +28,7 @@ export const TrustedBy: React.FC = () => {
       logoImg: '/images/client-logo-3.jpg',
     },
     {
-      name: 'MediCare Network',
+      name: 'Aarogya Network',
       industry: 'Healthcare Tech',
       icon: HeartPulse,
       color: 'from-emerald-500 to-teal-400',
@@ -36,7 +36,7 @@ export const TrustedBy: React.FC = () => {
       logoImg: '/images/client-logo-4.jpg',
     },
     {
-      name: 'Vanguard Logistics',
+      name: 'BharatRoute Logistics',
       industry: 'Supply Chain',
       icon: Truck,
       color: 'from-orange-500 to-amber-500',
@@ -44,7 +44,7 @@ export const TrustedBy: React.FC = () => {
       logoImg: '/images/client-logo-5.jpg',
     },
     {
-      name: 'Nova Dynamics',
+      name: 'Nirmaan AI',
       industry: 'AI & Robotics',
       icon: Bot,
       color: 'from-cyan-500 to-blue-600',
@@ -52,7 +52,7 @@ export const TrustedBy: React.FC = () => {
       logoImg: '/images/client-logo-6.jpg',
     },
     {
-      name: 'Starlight Retail',
+      name: 'Udaan Retail',
       industry: 'E-Commerce SaaS',
       icon: ShoppingBag,
       color: 'from-pink-500 to-rose-500',
@@ -60,7 +60,7 @@ export const TrustedBy: React.FC = () => {
       logoImg: '/images/client-logo-7.jpg',
     },
     {
-      name: 'Optima Industrial',
+      name: 'Shakti Industries',
       industry: 'Smart Industry 4.0',
       icon: Factory,
       color: 'from-blue-500 to-slate-400',
@@ -73,7 +73,7 @@ export const TrustedBy: React.FC = () => {
     <section className="py-12 bg-[#050816] border-y border-white/10 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 text-center mb-8">
         <p className="text-xs font-mono tracking-widest uppercase text-slate-400">
-          TRUSTED BY INNOVATIVE STARTUPS, SMES & GLOBAL ENTERPRISES
+          TRUSTED BY INDIAN STARTUPS, SMES, INSTITUTIONS & ENTERPRISES
         </p>
       </div>
 

@@ -59,9 +59,7 @@ export interface PricingPlan {
   name: string;
   tagline: string;
   monthlyPriceInr: number;
-  monthlyPriceUsd: number;
   annualPriceInr: number;
-  annualPriceUsd: number;
   popular?: boolean;
   features: string[];
   cta: string;
@@ -75,21 +73,21 @@ export interface FAQItem {
 }
 
 // ----------------------------------------------------
-// Mock Data Collections (India & Global Enterprise)
+// Mock Data Collections (India-first enterprise)
 // ----------------------------------------------------
 
 export const COMPANY_INFO = {
   name: "BalajiOne",
   website: "https://balajione.dev",
   tagline: "Building Digital Solutions for the Future",
-  mission: "To help Indian & global businesses grow through innovative software, AI solutions, automation, cloud technologies, and digital transformation.",
-  vision: "To become one of India's leading global software and AI solution providers.",
+  mission: "To help Indian businesses grow through innovative software, AI solutions, automation, cloud technologies, and digital transformation.",
+  vision: "To become one of India's most trusted software and AI solution providers.",
   phone: "+91 93485 32113",
   whatsapp: "919348532113",
   contactEmail: "contact@balajione.dev",
   supportEmail: "support@balajione.dev",
   email: "contact@balajione.dev",
-  address: "Plot No- 2064/719, Near Saikrupa Enclave, Dumduma, Bhubaneswar, Odisha-751019",
+  address: "Plot No- L1909, Phase II, Near Hanuman Temple Road, Dumduma, Bhubaneswar, Odisha-751019",
   secondaryAddress: "Bhubaneswar (Odisha) | BalajiOne Tech Hub",
   coordinates: "20.2514° N, 85.7891° E",
 };
@@ -244,7 +242,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     category: "enterprise",
     icon: "Zap",
     shortDesc: "High-performance RESTful and GraphQL APIs engineered for lightning latency, secure authentication, and third-party connectivity.",
-    fullDesc: "Connect disparate software platforms, Razorpay/Stripe payment providers, ERP systems, and cloud databases with secure, documented APIs.",
+    fullDesc: "Connect disparate software platforms, Razorpay/Cashfree payment providers, ERP systems, and cloud databases with secure, documented APIs.",
     features: ["JWT & OAuth2.0 authentication", "OpenAPI (Swagger) interactive docs", "Rate limiting & DDoS protection", "Webhook event bus"],
     technologies: ["Node.js", "NestJS", "Python FastAPI", "GraphQL", "Redis"],
     deliverables: ["Swagger Interactive Documentation", "SDK Client Libraries", "API Gateway Configuration"]
@@ -282,7 +280,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
     fullDesc: "An all-in-one financial operational hub designed for Indian startups and growing enterprises. Streamlines GST invoice generation, UPI payment links, subscription management, and real-time cash flow analytics.",
     features: [
       "Instant PDF GST invoice & E-Way bill creation with custom branding",
-      "Razorpay, PayTM, PhonePe & Stripe automated webhook billing",
+      "Razorpay, Cashfree, Paytm & PhonePe automated webhook billing",
       "Automated GST (CGST/SGST/IGST) tax calculation",
       "Automated WhatsApp & Email payment reminders",
       "Client self-service billing portal"
@@ -429,7 +427,7 @@ export const CASE_STUDIES: CaseStudyItem[] = [
   {
     id: "enterprise-school-erp",
     title: "Digitizing 40+ Campuses with Unified School ERP",
-    client: "Global Knowledge Academy",
+    client: "Bharat Knowledge Academy",
     industry: "Educational Institutions",
     category: "edtech",
     description: "Unified academic operations, parent communication, and online fee processing across 45,000+ students in India.",
@@ -449,7 +447,7 @@ export const CASE_STUDIES: CaseStudyItem[] = [
     client: "MediCare Health India",
     industry: "Healthcare",
     category: "ai",
-    description: "HIPAA-compliant telemedicine web & mobile application connecting specialists with remote patients.",
+    description: "DPDP Act-aligned telemedicine web & mobile application connecting specialists with remote patients.",
     challenge: "High clinic wait times and lack of secure remote consultation tools for post-surgery follow ups.",
     solution: "BalajiOne engineered an end-to-end encrypted video consultation platform with integrated EHR sync and automated AI symptom intake.",
     results: [
@@ -502,9 +500,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: "Starter Growth",
     tagline: "Ideal for Indian startups & growing businesses launching modern digital products.",
     monthlyPriceInr: 16000,
-    monthlyPriceUsd: 199,
     annualPriceInr: 16000,
-    annualPriceUsd: 199,
     features: [
       "Custom Responsive Web Application",
       "Tailwind CSS & Modern Animation System",
@@ -521,9 +517,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     name: "Professional Scale",
     tagline: "Designed for expanding businesses seeking custom software, GST ERP/CRM, or mobile apps.",
     monthlyPriceInr: 40000,
-    monthlyPriceUsd: 479,
     annualPriceInr: 40000,
-    annualPriceUsd: 479,
     popular: true,
     features: [
       "Everything in Starter Growth",
@@ -539,12 +533,10 @@ export const PRICING_PLANS: PricingPlan[] = [
   },
   {
     id: "enterprise",
-    name: "Enterprise Global",
+    name: "Enterprise India",
     tagline: "For enterprises requiring heavy custom AI pipelines, cloud infrastructure, and 99.99% uptime.",
     monthlyPriceInr: 56000,
-    monthlyPriceUsd: 679,
     annualPriceInr: 56000,
-    annualPriceUsd: 679,
     features: [
       "Everything in Professional Scale",
       "Multi-tenant Enterprise Software Architecture",
@@ -553,7 +545,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       "Legacy Code Migration & System Modernization",
       "Dedicated Senior Engineering Squad in India",
       "Guaranteed 15-Minute Emergency SLA",
-      "SOC2 & ISO Security Compliance Setup"
+      "DPDP Act & ISO 27001 Security Setup"
     ],
     cta: "Deploy Enterprise Project"
   }
@@ -562,9 +554,9 @@ export const PRICING_PLANS: PricingPlan[] = [
 export const TESTIMONIALS: TestimonialItem[] = [
   {
     id: "test-1",
-    name: "Marcus Vance",
+    name: "Arjun Mehta",
     role: "Chief Technology Officer",
-    company: "Apex Global Financial",
+    company: "Apex Financial India",
     avatar: "/images/avatar-marcus.jpg",
     rating: 5,
     content: "BalajiOne delivered our AI loan scoring platform in half the time expected. Their architecture design is sleek, secure, and has processed over ₹450 Cr without a single hitch."
@@ -582,7 +574,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     id: "test-3",
     name: "Dr. Rajesh Sharma",
     role: "Managing Director",
-    company: "Global Knowledge Academy India",
+    company: "Bharat Knowledge Academy",
     avatar: "/images/avatar-sarah.jpg",
     rating: 5,
     content: "CampusOne ERP transformed how our 40+ campuses operate. Parents love the real-time app and our fee collection is 100% automated via UPI now."
@@ -599,8 +591,8 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: "faq-2",
     category: "general",
-    question: "Where is BalajiOne located and do you serve Indian and global clients?",
-    answer: "Our primary technology engineering hub is located in Bengaluru (India Tech Capital) with regional offices in Delhi NCR and Mumbai. We serve clients across India and globally with 24/7 communication in IST and global timezones."
+    question: "Where is BalajiOne located and do you serve clients across India?",
+    answer: "BalajiOne is headquartered in Dumduma, Bhubaneswar, Odisha. We serve startups, institutions, SMEs, and enterprises across India with communication and support aligned to Indian Standard Time."
   },
   {
     id: "faq-3",
@@ -626,12 +618,12 @@ export const WHY_CHOOSE_US = [
   { icon: "Zap", title: "Fast Delivery", description: "Agile 2-week sprint cycles ensuring rapid time-to-market without compromising code quality." },
   { icon: "MessageSquare", title: "Transparent Communication", description: "Daily Slack & WhatsApp updates, weekly demo calls, and real-time Jira / GitHub progress tracking." },
   { icon: "Scaling", title: "Scalable Architecture", description: "Cloud-native microservices designed from day one to handle millions of requests smoothly." },
-  { icon: "Shield", title: "Security First", description: "SOC2 compliant standards, end-to-end data encryption, and vulnerability testing built in." },
-  { icon: "Tag", title: "Competitive Pricing", description: "World-class engineering talent delivering maximum ROI with transparent pricing in INR & USD." },
+  { icon: "Shield", title: "Security First", description: "DPDP Act-aligned standards, end-to-end data encryption, and vulnerability testing built in." },
+  { icon: "Tag", title: "Competitive Pricing", description: "World-class engineering talent delivering maximum ROI with transparent pricing in Indian rupees." },
   { icon: "Cpu", title: "Latest Technologies", description: "Leveraging React 19, Next.js 15, GenAI, and modern cloud stacks for long-term tech relevance." },
   { icon: "Clock", title: "24×7 Support", description: "Dedicated support team on standby with guaranteed emergency SLA response times in IST." },
   { icon: "Target", title: "Business Focused", description: "We don't just write code; we design solutions aligned with your revenue and growth goals." },
-  { icon: "Award", title: "Global Standards", description: "Trusted by Indian enterprises, startups, and institutions across 15+ countries." }
+  { icon: "Award", title: "India-Ready Standards", description: "Built for Indian enterprises, startups, and institutions across the country." }
 ];
 
 export const PROCESS_STEPS = [

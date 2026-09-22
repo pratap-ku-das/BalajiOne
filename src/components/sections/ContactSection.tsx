@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare, Calendar, CheckCircle2, User, Building, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, Calendar, CheckCircle2, User, Building, ExternalLink, IndianRupee } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { COMPANY_INFO } from '../../data/mockData';
 import { submitWeb3Form } from '../../utils/formHandler';
@@ -263,7 +263,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenSchedule, 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
-                        Select Plan / Budget *
+                        <span className="inline-flex items-center gap-1"><IndianRupee className="w-3.5 h-3.5" /> Select Plan / Budget *</span>
                       </label>
                       <select
                         value={budget}
@@ -271,13 +271,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenSchedule, 
                         className="w-full bg-[#070D22] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 font-sans"
                       >
                         <option value="₹16,000 / Project (Starter Growth)" className="bg-slate-900">
-                          ₹16,000 / Project ($199) • Starter Growth
+                          ₹16,000 / Project • Starter Growth
                         </option>
                         <option value="₹40,000 / Project (Professional Scale)" className="bg-slate-900">
-                          ₹40,000 / Project ($479) • Professional Scale (Popular)
+                          ₹40,000 / Project • Professional Scale (Popular)
                         </option>
-                        <option value="₹56,000 / Project (Enterprise Global)" className="bg-slate-900">
-                          ₹56,000 / Project ($679) • Enterprise Global
+                        <option value="₹56,000 / Project (Enterprise India)" className="bg-slate-900">
+                          ₹56,000 / Project • Enterprise India
                         </option>
                         <option value="Custom Project Scope (Tailored Quote)" className="bg-slate-900">
                           Custom Project Scope (Tailored Quote)
