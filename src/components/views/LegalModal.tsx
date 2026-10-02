@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { X } from 'lucide-react';
+import { X, ArrowUpRight } from 'lucide-react';
 
-export const LegalModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
+export const LegalModal: React.FC<{
+  isOpen: boolean;
+  onClose: () => void;
+  onNavigateToFullPolicy?: () => void;
+}> = ({ isOpen, onClose, onNavigateToFullPolicy }) => {
   const [activeTab, setActiveTab] = useState<'privacy' | 'terms'>('privacy');
 
   if (!isOpen) return null;
@@ -38,19 +42,36 @@ export const LegalModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
 
         {activeTab === 'privacy' ? (
           <div className="space-y-4 text-xs text-slate-300 leading-relaxed font-sans">
-            <h3 className="text-xl font-bold font-heading text-white">Privacy Policy (BalajiOne Enterprises)</h3>
-            <p><strong>Effective Date:</strong> July 26, 2026</p>
+            <div className="flex items-center justify-between pb-2 border-b border-white/10">
+              <h3 className="text-xl font-bold font-heading text-white">Privacy Policy</h3>
+              <span className="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">
+                Last Updated: October 2, 2026
+              </span>
+            </div>
             <p>
-              BalajiOne (&quot;balajione.dev&quot;) is committed to protecting the privacy and confidentiality of our clients, partners, and website visitors. This document details our data collection and protection practices.
+              BalajiOne Enterprises (&quot;balajione.dev&quot;) is committed to protecting the privacy, confidentiality, and integrity of data for our clients, partners, and visitors.
             </p>
-            <h4 className="text-sm font-bold text-white font-heading">1. Data Encryption & Security</h4>
             <p>
-              All customer data, application source code, and API interactions are transmitted via TLS 1.3 256-bit encryption. Our security practices are aligned with India's Digital Personal Data Protection Act, 2023 and ISO 27001 controls, and we execute NDAs before project commencement.
+              We provide AI-powered software development, web applications, mobile applications, cloud solutions, UI/UX design, DevOps, API integration, business automation, and SaaS product development.
             </p>
-            <h4 className="text-sm font-bold text-white font-heading">2. IP Ownership</h4>
-            <p>
-              Clients retain 100% full ownership of custom source code, databases, design assets, and intellectual property produced under paid engagement contracts.
-            </p>
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-2">
+              <strong className="text-white block font-heading">Complete Legal Policy Document:</strong>
+              <p className="text-slate-400">
+                Our complete 16-section Privacy Policy is available on its dedicated page with full details on collected data, usage, cookies, third-party services, data retention, security, and your user privacy rights.
+              </p>
+              {onNavigateToFullPolicy && (
+                <button
+                  onClick={() => {
+                    onClose();
+                    onNavigateToFullPolicy();
+                  }}
+                  className="mt-2 w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 hover:scale-[1.01] transition-transform cursor-pointer shadow-md"
+                >
+                  <span>Open Dedicated Privacy Policy Page (/privacy-policy)</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+              )}
+            </div>
           </div>
         ) : (
           <div className="space-y-4 text-xs text-slate-300 leading-relaxed font-sans">

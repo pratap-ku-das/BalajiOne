@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CursorGlow } from './components/common/CursorGlow';
 import { ScrollProgress } from './components/common/ScrollProgress';
 import { CmdKSearchModal } from './components/common/CmdKSearchModal';
@@ -28,8 +28,23 @@ import { CareersModal } from './components/views/CareersModal';
 import { TeamModal } from './components/views/TeamModal';
 import { LegalModal } from './components/views/LegalModal';
 import { NotFoundView } from './components/views/NotFoundView';
+import { PrivacyPolicyPage } from './components/views/PrivacyPolicyPage';
+
+const getNormalizedPath = (): string => {
+  if (typeof window === 'undefined') return '/';
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+  if (
+    path === '/privacy-policy' ||
+    window.location.hash === '#/privacy-policy' ||
+    window.location.hash === '#privacy-policy'
+  ) {
+    return '/privacy-policy';
+  }
+  return '/';
+};
 
 export function App() {
+  const [currentRoute, setCurrentRoute] = useState<string>(getNormalizedPath);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   const [isEstimatorOpen, setIsEstimatorOpen] = useState(false);
@@ -41,10 +56,44 @@ export function App() {
 
   const [prefilledScope, setPrefilledScope] = useState('');
 
+  // Handle browser back and forward button navigation
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentRoute(getNormalizedPath());
+    };
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
+  }, []);
+
+  const navigateRoute = (route: string) => {
+    if (window.location.pathname !== route) {
+      window.history.pushState({}, '', route);
+    }
+    setCurrentRoute(route);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (currentRoute !== '/') {
+      window.history.pushState({}, '', '/');
+      setCurrentRoute('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 60);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -76,51 +125,59 @@ export function App() {
         onNavigateSection={scrollToSection}
       />
 
-      {/* Main Page Content */}
-      <main>
-        <Hero
-          onStartProject={() => scrollToSection('contact')}
-          onBookConsultation={() => setIsScheduleOpen(true)}
-          onOpenEstimator={() => setIsEstimatorOpen(true)}
+      {/* Page Content: Privacy Policy Route vs Main Homepage */}
+      {currentRoute === '/privacy-policy' ? (
+        <PrivacyPolicyPage
+          onNavigateHome={() => navigateRoute('/')}
+          onOpenContact={() => setIsScheduleOpen(true)}
         />
+      ) : (
+        <main>
+          <Hero
+            onStartProject={() => scrollToSection('contact')}
+            onBookConsultation={() => setIsScheduleOpen(true)}
+            onOpenEstimator={() => setIsEstimatorOpen(true)}
+          />
 
-        <TrustedBy />
+          <TrustedBy />
 
-        <About />
+          <About />
 
-        <Services onSelectService={handleSelectServiceOrPlan} />
+          <Services onSelectService={handleSelectServiceOrPlan} />
 
-        <WhyChooseUs />
+          <WhyChooseUs />
 
-        <FeaturedProducts onBookDemo={(productTitle) => handleSelectServiceOrPlan(`Demo request for ${productTitle}`)} />
+          <FeaturedProducts onBookDemo={(productTitle) => handleSelectServiceOrPlan(`Demo request for ${productTitle}`)} />
 
-        <ProcessTimeline />
+          <ProcessTimeline />
 
-        <TechStack />
+          <TechStack />
 
-        <Portfolio />
+          <Portfolio />
 
-        <Statistics />
+          <Statistics />
 
-        <Testimonials />
+          <Testimonials />
 
-        <Pricing
-          onSelectPlan={handleSelectServiceOrPlan}
-          onOpenEstimator={() => setIsEstimatorOpen(true)}
-        />
+          <Pricing
+            onSelectPlan={handleSelectServiceOrPlan}
+            onOpenEstimator={() => setIsEstimatorOpen(true)}
+          />
 
-        <FAQSection />
+          <FAQSection />
 
-        <ContactSection
-          onOpenSchedule={() => setIsScheduleOpen(true)}
-          prefilledScope={prefilledScope}
-        />
-      </main>
+          <ContactSection
+            onOpenSchedule={() => setIsScheduleOpen(true)}
+            prefilledScope={prefilledScope}
+          />
+        </main>
+      )}
 
       {/* Footer */}
       <Footer
         onNavigateSection={scrollToSection}
         onOpenView={handleOpenView}
+        onNavigateRoute={navigateRoute}
       />
 
       {/* Floating Utilities */}
@@ -130,6 +187,7 @@ export function App() {
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
         onSelectAction={scrollToSection}
+        onNavigateRoute={navigateRoute}
       />
 
       <ScheduleDrawer
@@ -157,6 +215,7 @@ export function App() {
       <LegalModal
         isOpen={isLegalOpen}
         onClose={() => setIsLegalOpen(false)}
+        onNavigateToFullPolicy={() => navigateRoute('/privacy-policy')}
       />
 
       <NotFoundView

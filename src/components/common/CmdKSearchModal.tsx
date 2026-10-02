@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Search, X, Code, Box, Layers, ArrowRight, Sparkles } from 'lucide-react';
+import { Search, X, Code, Box, Layers, ArrowRight, Sparkles, ShieldCheck } from 'lucide-react';
 import { SERVICES_DATA, PRODUCTS_DATA, CASE_STUDIES } from '../../data/mockData';
 
 interface CmdKSearchModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSelectAction: (sectionId: string) => void;
+  onNavigateRoute?: (route: string) => void;
 }
 
-export const CmdKSearchModal: React.FC<CmdKSearchModalProps> = ({ isOpen, onClose, onSelectAction }) => {
+export const CmdKSearchModal: React.FC<CmdKSearchModalProps> = ({ isOpen, onClose, onSelectAction, onNavigateRoute }) => {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
@@ -95,6 +96,43 @@ export const CmdKSearchModal: React.FC<CmdKSearchModalProps> = ({ isOpen, onClos
                   );
                 })}
               </div>
+            </div>
+          )}
+
+          {/* Privacy Policy Match */}
+          {query && (query.toLowerCase().includes('priv') || query.toLowerCase().includes('policy') || query.toLowerCase().includes('legal') || query.toLowerCase().includes('data') || query.toLowerCase().includes('terms')) && (
+            <div>
+              <div className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                Legal &amp; Compliance
+              </div>
+              <button
+                onClick={() => {
+                  if (onNavigateRoute) {
+                    onNavigateRoute('/privacy-policy');
+                  } else {
+                    window.history.pushState({}, '', '/privacy-policy');
+                    window.dispatchEvent(new PopStateEvent('popstate'));
+                  }
+                  onClose();
+                }}
+                className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-white/10 text-left transition-colors group cursor-pointer border border-amber-500/30 bg-amber-500/10"
+              >
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400 border border-amber-500/30">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-white group-hover:text-amber-300 transition-colors flex items-center gap-2">
+                      <span>Privacy Policy</span>
+                      <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300">Updated Oct 2, 2026</span>
+                    </div>
+                    <div className="text-xs text-slate-400 line-clamp-1">
+                      Official legal policy covering data collection, cookies, third-party services, retention, and user rights.
+                    </div>
+                  </div>
+                </div>
+                <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all" />
+              </button>
             </div>
           )}
 

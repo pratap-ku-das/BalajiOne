@@ -5,9 +5,10 @@ import { COMPANY_INFO } from '../../data/mockData';
 interface FooterProps {
   onNavigateSection: (secId: string) => void;
   onOpenView: (viewName: 'team' | 'careers' | 'legal' | '404') => void;
+  onNavigateRoute?: (route: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenView }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenView, onNavigateRoute }) => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
@@ -217,8 +218,28 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenView })
                   </button>
                 </li>
                 <li>
+                  <a
+                    href="/privacy-policy"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (onNavigateRoute) {
+                        onNavigateRoute('/privacy-policy');
+                      } else {
+                        window.history.pushState({}, '', '/privacy-policy');
+                        window.dispatchEvent(new PopStateEvent('popstate'));
+                      }
+                    }}
+                    className="hover:text-amber-400 transition-colors cursor-pointer text-left flex items-center gap-1.5"
+                  >
+                    <span>Privacy Policy</span>
+                    <span className="px-1.5 py-0.5 bg-amber-500/20 border border-amber-500/30 text-amber-300 text-[9px] rounded font-mono">
+                      Official
+                    </span>
+                  </a>
+                </li>
+                <li>
                   <button onClick={() => onOpenView('legal')} className="hover:text-amber-400 transition-colors cursor-pointer text-left">
-                    Privacy Policy & Terms
+                    Terms &amp; Conditions
                   </button>
                 </li>
                 <li>
@@ -233,8 +254,32 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection, onOpenView })
 
         {/* Bottom copyright bar */}
         <div className="pt-6 border-t border-amber-500/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400 text-center sm:text-left">
-          <div>
-            &copy; {new Date().getFullYear()} BalajiOne Enterprises. All rights reserved.
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <span>&copy; {new Date().getFullYear()} BalajiOne Enterprises. All rights reserved.</span>
+            <div className="flex items-center gap-3 text-[11px]">
+              <a
+                href="/privacy-policy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onNavigateRoute) {
+                    onNavigateRoute('/privacy-policy');
+                  } else {
+                    window.history.pushState({}, '', '/privacy-policy');
+                    window.dispatchEvent(new PopStateEvent('popstate'));
+                  }
+                }}
+                className="hover:text-amber-300 transition-colors underline underline-offset-4"
+              >
+                Privacy Policy
+              </a>
+              <span>•</span>
+              <button
+                onClick={() => onOpenView('legal')}
+                className="hover:text-amber-300 transition-colors underline underline-offset-4 cursor-pointer"
+              >
+                Terms of Service
+              </button>
+            </div>
           </div>
           <div className="flex items-center space-x-2.5 bg-amber-500/10 px-4 py-2 rounded-full border border-amber-500/30 shadow-md">
             <span className="text-slate-300 text-xs">Developed by</span>
